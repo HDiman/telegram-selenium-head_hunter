@@ -6,7 +6,7 @@ import random
 chrome_driver_path = "/Users/dsannikov/Documents/GitHub/ParsingPages/telegram-selenium-head_hunter/driver/chromedriver"
 
 # User-Agent
-useragent = UserAgent()
+useragent = UserAgent(verify_ssl=False)
 
 # ua.ie
 # # Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US);

@@ -5,15 +5,14 @@ import random
 
 chrome_driver_path = "/Users/dsannikov/Documents/GitHub/ParsingPages/telegram-selenium-head_hunter/driver/chromedriver"
 
-# User-Agent
+# User-Agent. Important to add (UserAgent(verify_ssl=False)
 useragent = UserAgent(verify_ssl=False)
-# useragent = UserAgent()
 
 # options
 options = webdriver.ChromeOptions()
 options.add_argument(f"user-agent={useragent.random}")
 
-# options.add_argument("user-agent=Hello")
+
 driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
 
 
