@@ -17,7 +17,7 @@ url = "https://id.vk.com/auth?app_id=7913379&v=1.48.0&redirect_uri=https%3A%2F%2
 
 try:
     driver.get(url=url)
-    time.sleep(120)
+    time.sleep(10)
 
     # login_input = driver.find_element(By.CLASS_NAME, "ui-input__placeholder_optional")
     # login_input.send_keys("+79160585921")
