@@ -32,12 +32,47 @@ try:
     input_code = input("Please input number: ")
     time.sleep(5)
 
-    # ui-pin-input
     for i in range(4):
         enter_code = driver.find_element(By.CLASS_NAME, "ui-pin-input")
         enter_code.send_keys(f"{input_code[i]}")
-        time.sleep(10)
+        time.sleep(2)
     time.sleep(60)
+
+    # //*[@id="BO_REACT_MOBILE_TAB_BAR"]/nav/a[2]
+    chat_order = driver.find_element(By.XPATH, "//*[@id='BO_REACT_MOBILE_TAB_BAR']/nav/a[2]").get_attribute('href')
+    print(chat_order)
+    time.sleep(5)
+
+    # inside chat
+
+
+    # # Title of the order
+    # title_order = driver.find_element(By.CLASS_NAME, "subjects.viewport-marker").text
+    # print(title_order)
+    # time.sleep(5)
+
+    # # Order description
+    # desc_order = driver.find_element(By.CLASS_NAME, "aim").text
+    # print(desc_order)
+    # time.sleep(5)
+    #
+    # # Client info
+    # client_order = driver.find_element(By.CLASS_NAME, "client-info.order_block__client-info").text
+    # print(client_order)
+    # time.sleep(5)
+    #
+    # # Address
+    # address_order = driver.find_element(By.XPATH, '//*[@id="order_block_49212293"]/tbody/tr/td[2]/div[2]').text
+    # print(address_order)
+    # time.sleep(5)
+
+    # //*[@id="order_block_49216876"]/tbody/tr/td[2]/div[2]
+    # //*[@id="order_block_49212293"]/tbody/tr/td[2]/div[2]
+
+    time.sleep(60)
+
+
+
 
 
 except Exception as ex:
