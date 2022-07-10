@@ -39,7 +39,7 @@ try:
         time.sleep(2)
 
     # Waiting for page downloaded
-    time.sleep(60)
+    time.sleep(30)
 
     # Find out href link to pass for enter inside
     chat_order = driver.find_element(By.XPATH, "//*[@id='BO_REACT_MOBILE_TAB_BAR']/nav/a[2]").get_attribute('href')
@@ -60,10 +60,21 @@ try:
     time.sleep(5)
 
     # Subjects
-    subjects_fin_order = driver.find_elements(By.CLASS_NAME, "subjects")
-    for i in range(len(subjects_fin_order)):
-        print(f"{i+1}: {subjects_fin_order[i].text}")
+    clients_fin_order = driver.find_elements(By.CLASS_NAME, "client-info__name")
+    dates_fin_order = driver.find_elements(By.CLASS_NAME, "lbl")
+    addresses_fin_order = driver.find_elements(By.XPATH, "//div[@title='Район']")
+    # subjects_fin_order = driver.find_elements(By.CLASS_NAME, "subjects")
+    # descriptions_fin_order = driver.find_elements(By.CLASS_NAME, "aim")
+    # prices_fin_order = driver.find_elements(By.CLASS_NAME, "order_logging_data")
 
+    for i in range(len(clients_fin_order)):
+        print(f"{i+1}: Клиент: {clients_fin_order[i].text},\n "
+              f"заказ от: {dates_fin_order[i].text},\n "
+              f"адрес: {addresses_fin_order[i].text},\n ")
+              # f"тема: {subjects_fin_order[i].text},\n"
+              # f"проблема: {descriptions_fin_order[i].text},\n"
+              # f"стоимость заказа: {prices_fin_order[i+2].text}\n")
+        time.sleep(5)
 
     time.sleep(600)
 
