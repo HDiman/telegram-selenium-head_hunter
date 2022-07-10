@@ -63,20 +63,20 @@ try:
     clients_fin_order = driver.find_elements(By.CLASS_NAME, "client-info__name")
     dates_fin_order = driver.find_elements(By.CLASS_NAME, "lbl")
     addresses_fin_order = driver.find_elements(By.XPATH, "//div[@title='Район']")
-    # subjects_fin_order = driver.find_elements(By.CLASS_NAME, "subjects")
-    # descriptions_fin_order = driver.find_elements(By.CLASS_NAME, "aim")
-    # prices_fin_order = driver.find_elements(By.CLASS_NAME, "order_logging_data")
+    subjects_fin_order = driver.find_elements(By.CLASS_NAME, "subjects")
+    descriptions_fin_order = driver.find_elements(By.CLASS_NAME, "aim")
+    prices_fin_order = driver.find_elements(By.XPATH, "//div[@title='Ставка']")
 
     for i in range(len(clients_fin_order)):
-        print(f"{i+1}: Клиент: {clients_fin_order[i].text},\n "
-              f"заказ от: {dates_fin_order[i].text},\n "
-              f"адрес: {addresses_fin_order[i].text},\n ")
-              # f"тема: {subjects_fin_order[i].text},\n"
-              # f"проблема: {descriptions_fin_order[i].text},\n"
-              # f"стоимость заказа: {prices_fin_order[i+2].text}\n")
+        print(f"{i+1}: Клиент: {clients_fin_order[i].text},\n"
+              f"заказ от: {dates_fin_order[i].text},\n"
+              f"адрес: {addresses_fin_order[i].text},\n"
+              f"тема: {subjects_fin_order[i].text},\n"
+              f"проблема: {descriptions_fin_order[i].text},\n"
+              f"стоимость заказа: {prices_fin_order[i].text}\n")
         time.sleep(5)
 
-    time.sleep(600)
+    time.sleep(60)
 
 
 
