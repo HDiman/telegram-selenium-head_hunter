@@ -20,19 +20,17 @@ def get_info(order_name):
     addresses_order = driver.find_elements(By.XPATH, "//div[@title='Район']")
     subjects_order = driver.find_elements(By.CLASS_NAME, "subjects")
     descriptions_order = driver.find_elements(By.CLASS_NAME, "aim")
-    if order_name == "-- В работе --":
-        prices_order = driver.find_elements(By.XPATH, "//div[@title='Ставка']")
-    else:
-        prices_order = ["0"]
+    prices_order = driver.find_elements(By.XPATH, "//div[@title='Ставка']")
 
     for n in range(len(clients_order)):
         print(f"{order_name}\n"
-              f"Клиент: {clients_order[n].text},\n"
-              f"заказ от: {dates_order[n].text},\n"
-              f"адрес: {addresses_order[n].text},\n"
-              f"тема: {subjects_order[n].text},\n"
-              f"проблема: {descriptions_order[n].text},\n"
-              f"стоимость заказа: {prices_order[n].text}\n")
+              f"Клиент: {clients_order[n].text}\n"
+              f"заказ от: {dates_order[n].text}\n"
+              f"адрес: {addresses_order[n].text}\n"
+              f"тема: {subjects_order[n].text}\n"
+              f"проблема: {descriptions_order[n].text}")
+        if order_name == "-- В работе --":
+              print(f"стоимость заказа: {prices_order[n].text}\n")
         time.sleep(5)
 
 
